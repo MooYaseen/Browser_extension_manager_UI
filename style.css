@@ -88,6 +88,7 @@ body.dark-mode {
     padding: 0 15px;
     /* مسافة داخلية من الجوانب */
     box-sizing: border-box;
+    min-height: 100dvh;
 }
 
 /* شاشات كبيرة جدًا */
