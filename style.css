@@ -1,0 +1,363 @@
+@font-face {
+    font-family: 'NotoSansRegular';
+    src: url('assets/fonts/static/NotoSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSansMedium';
+    src: url('assets/fonts/static/NotoSans-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSansBold';
+    src: url('assets/fonts/static/NotoSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    all: unset;
+}
+
+html {
+    width: 100%;
+    min-height: 100dvh;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --text-color: hsl(227, 75%, 14%);
+    --text-color-alt: hsl(226, 11%, 37%);
+    --text-color-dark: hsl(200, 60%, 99%);
+    --bg-600: hsl(226, 11%, 37%);
+    --bg-300: hsl(0, 0%, 78%);
+    --bg-200: hsl(217, 61%, 90%);
+    --bg-100: hsl(0, 0%, 93%);
+    --bg: hsl(200, 60%, 99%);
+    --orange: hsl(3, 86%, 64%);
+    --orange-dark: hsl(3, 71%, 56%);
+    --red: hsl(3, 77%, 44%);
+    --radius-s: 8px;
+    --radius-l: 13px;
+    font-family: 'NotoSansRegular', sans-serif;
+}
+
+body.dark-mode {
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+    --text-color: hsl(200, 60%, 99%);
+    --bg-600: hsl(226, 25%, 17%);
+    --bg-300: hsl(225, 23%, 24%);
+    --bg-200: hsl(226, 11%, 37%);
+    --hover: hsl(226, 11%, 37%);
+    --bg: hsl(226, 25%, 17%);
+}
+
+.container {
+    width: 90%;
+    /* ياخد 90% من عرض الشاشة */
+    max-width: 1200px;
+    /* الحد الأقصى للعرض */
+    margin: 0 auto;
+    /* يوسّط العنصر أفقياً */
+    padding: 0 15px;
+    /* مسافة داخلية من الجوانب */
+    box-sizing: border-box;
+}
+
+/* شاشات كبيرة جدًا */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* شاشات متوسطة */
+@media (min-width: 992px) and (max-width: 1599px) {
+    .container {
+        max-width: 990px;
+    }
+}
+
+/* شاشات صغيرة */
+@media (min-width: 576px) and (max-width: 991px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+/* شاشات موبايل صغيرة */
+@media (max-width: 575px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .list .tools {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.attribution a {
+    color: var(--text-color);
+}
+
+.container .header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--bg);
+    border-radius: var(--radius-l);
+    margin-top: 15px;
+}
+
+.header .home {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header .home p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.header .logo {
+    padding: 8px;
+    margin: 0 8px;
+    border-radius: var(--radius-s);
+    background-color: var(--bg-100);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+
+.dark-mode .header .logo {
+    background-color: var(--bg-300);
+}
+
+.header .logo:hover {
+    background-color: var(--bg-300);
+}
+
+.dark-mode .header .logo:hover {
+    background-color: var(--bg-200);
+}
+
+.list .tools .title {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 800;
+}
+
+.list .tools {
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.list .btns {
+    display: flex;
+    gap: 14px;
+}
+
+.list .btns li button {
+    padding: 8px 20px;
+    background-color: var(--bg);
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    border: 1px solid var(--bg-200);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.list .btns li button:hover {
+    background-color: var(--hover);
+}
+
+.list .btns li button.active {
+    background-color: var(--red);
+    color: var(--text-color-dark);
+}
+
+.list .btns li button.active:hover {
+    background-color: var(--orange-dark);
+}
+
+.list #cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.75rem;
+    margin: 25px 0;
+}
+
+.list #cards .card {
+    padding: 14px;
+    border-radius: 20px;
+    background-color: var(--bg);
+    border: 1px solid var(--bg-200);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.list #cards .card .info {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.list #cards .card .info img {
+    width: 50px;
+    height: auto;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.list #cards .card .info .text .head {
+    font-size: 1rem;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.list #cards .card .info .text p {
+    font-size: .65rem;
+    color: var(--text-color-alt);
+    color: hsl(226, 11%, 37%);
+}
+
+.list #cards .card .settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list #cards .card .settings .remove {
+    cursor: pointer;
+    padding: 7px 14px;
+    background-color: var(--bg);
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-size: 0.66rem;
+    border: 1px solid var(--bg-200);
+    color: var(--text-color);
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.list #cards .card .settings .remove:hover {
+    transition: 0.2s;
+    transition-property: color, background-color;
+    background-color: var(--red);
+    color: var(--text-color-dark);
+}
+
+
+.list #cards .card .settings .toggle {
+    position: relative;
+    margin: 0 5px;
+    width: 40px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: var(--bg-300);
+    display: flex;
+    align-items: center;
+    transition: .3s;
+    transition-property: left, background-color;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.dark-mode .list #cards .card .settings .toggle {
+    background-color: var(--bg-200);
+}
+
+.list #cards .card .settings .toggle:hover {
+    transition: .3s;
+}
+
+.list #cards .card .settings .toggle span {
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    left: 3px;
+    transition: .3s;
+}
+
+.list #cards .card .settings .toggle.active {
+    background-color: var(--red);
+}
+
+.list #cards .card .settings .toggle.active span {
+    left: 22px;
+}
+
+
+.header .logo:focus,
+.card .settings .toggle:focus,
+.list #cards .card .settings .remove:focus,
+.btns li button:focus {
+    box-shadow: 0 0 0 2px white,
+        0 0 0 4px var(--orange-dark);
+    outline: none;
+    background-color: var(--bg-200);
+}
+
+
+.dark-mode .card .settings .toggle:focus,
+.dark-mode .list #cards .card .settings .remove:focus,
+.dark-mode .btns li button:focus,
+.dark-mode .header .logo:focus {
+    box-shadow: 0 0 0 2px var(--bg-600),
+        0 0 0 4px var(--orange-dark);
+}
