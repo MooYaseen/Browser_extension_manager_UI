@@ -43,6 +43,9 @@ button {
 html {
     width: 100%;
     min-height: 100dvh;
+    overflow-y: scroll;
+    /* دايمًا خلي شريط التمرير الرأسي ظاهر */
+
 }
 
 body {
